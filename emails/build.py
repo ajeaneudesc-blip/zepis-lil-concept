@@ -128,8 +128,8 @@ after = "\n".join([
 
 here = Path(__file__).parent
 for name, title, pre, body in [
-    ("1-bienvenue.html", "Bienvenue chez Zépis Lil", "Votre code -10 % est à l’intérieur.", welcome),
-    ("2-panier-abandonne.html", "Votre panier vous attend", "Vos épices vous attendent encore.", abandoned),
+    ("1-bienvenue.html", "Bienvenue chez Zépis Lil", "Votre code de -10 % pour la première commande.", welcome),
+    ("2-panier-abandonne.html", "Votre panier vous attend", "Votre panier est toujours disponible.", abandoned),
     ("3-apres-achat.html", "Merci pour votre commande", "Commande ZL-0001 confirmée (exemple).", after),
 ]:
     (here / name).write_text(page(title, pre, body), encoding="utf-8")

@@ -1,4 +1,4 @@
-/* Zépis Lil — boutique concept (projet personnel, marque fictive)
+/* Zépis Lil: boutique concept (projet personnel, marque fictive)
    S'appuie sur tokens.css : aucune couleur en dur ici, aucune ombre. */
 
 /* Direction du projet (demande de Jean Eudes) : fond 100 % blanc, aucun arrondi,
@@ -28,10 +28,10 @@ button { font: inherit; color: inherit; }
         background: var(--accent); color: var(--accent-ink); }
 .skip:focus { top: 12px; }
 
-/* — Bandeau concept — */
+/* Bandeau concept */
 .concept { background: var(--tx); color: var(--blanc); font-size: .8125rem; text-align: center; padding: 8px 16px; }
 
-/* — En-tête en verre — */
+/* En-tête en verre */
 .nav { position: sticky; top: 0; z-index: 20; }
 .nav .glass { border-width: 0 0 1px; }
 .nav-in { display: flex; align-items: center; gap: var(--s4); height: 60px; }
@@ -49,7 +49,7 @@ button { font: inherit; color: inherit; }
 .badge[hidden] { display: none; }
 @media (min-width: 760px) { .nav-links { display: flex; } }
 
-/* — Boutons — */
+/* Boutons */
 .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 48px; padding: 0 22px;
        border-radius: var(--r-pill); border: 1px solid transparent; font-weight: 550; font-size: 1rem; letter-spacing: -.01em;
        text-decoration: none; cursor: pointer; }
@@ -58,7 +58,7 @@ button { font: inherit; color: inherit; }
 .btn-ghost { background: var(--cd); color: var(--tx); border-color: var(--bd); }
 .btn-block { width: 100%; }
 
-/* — Hero — */
+/* Hero */
 .hero { padding: var(--s12) 0 var(--s16); }
 .hero-grid { display: grid; gap: var(--s10); align-items: center; }
 .eyebrow { font-size: .8125rem; font-weight: 550; color: var(--accent-text); letter-spacing: .02em; text-transform: uppercase; margin: 0 0 var(--s3); }
@@ -72,13 +72,13 @@ button { font: inherit; color: inherit; }
 .trust svg { width: 18px; height: 18px; color: var(--ok); }
 @media (min-width: 860px) { .hero-grid { grid-template-columns: 1.1fr 1fr; } }
 
-/* — Sections — */
+/* Sections */
 section { padding: var(--s12) 0; }
 .sec-head { display: flex; align-items: end; justify-content: space-between; gap: var(--s4); margin-bottom: var(--s6); }
 .sec-head h2 { font-size: clamp(1.625rem, 3.5vw, 2.25rem); font-weight: 600; margin: 0; }
 .sec-head a { font-size: .9375rem; }
 
-/* — Grille produits — */
+/* Grille produits */
 .grid { display: grid; gap: var(--s4); grid-template-columns: repeat(2, 1fr); }
 @media (min-width: 860px) { .grid { grid-template-columns: repeat(4, 1fr); gap: var(--s5); } }
 .card { background: var(--cd); border: 1px solid var(--bd); border-radius: var(--r-xl); overflow: hidden; display: flex; flex-direction: column; }
@@ -93,7 +93,7 @@ section { padding: var(--s12) 0; }
 .add-mini { width: 44px; height: 44px; border-radius: var(--r-pill); border: 0; background: var(--accent); color: var(--accent-ink); display: grid; place-items: center; cursor: pointer; }
 .add-mini svg { width: 20px; height: 20px; }
 
-/* — Pourquoi nous — */
+/* Pourquoi nous */
 .why { display: grid; gap: var(--s4); }
 @media (min-width: 760px) { .why { grid-template-columns: repeat(3, 1fr); } }
 .why div { background: var(--sb); border-radius: var(--r-xl); padding: var(--s6); }
@@ -101,7 +101,7 @@ section { padding: var(--s12) 0; }
 .why p { margin: 0; color: var(--mu); font-size: .9375rem; }
 .why .n { font-family: var(--mono); font-size: .8125rem; color: var(--accent-text); display: block; margin-bottom: var(--s3); }
 
-/* — Avis (contenu fictif signalé) — */
+/* Avis (contenu fictif signalé) */
 .demo-note { font-size: .8125rem; color: var(--warn); background: var(--warn-bg); border-radius: var(--r-m); padding: 8px 12px; display: inline-block; margin: 0 0 var(--s5); }
 .reviews { display: grid; gap: var(--s4); }
 @media (min-width: 760px) { .reviews { grid-template-columns: repeat(3, 1fr); } }
@@ -110,7 +110,7 @@ section { padding: var(--s12) 0; }
 .review figcaption { font-size: .8125rem; color: var(--mu); }
 .stars { color: var(--tx); letter-spacing: 2px; margin-bottom: var(--s2); font-size: .9375rem; }
 
-/* — Bloc newsletter — */
+/* Bloc newsletter */
 .news { background: var(--sb); color: var(--tx); border: 1px solid var(--bd); border-radius: var(--r-card); padding: var(--s10) var(--s6); display: grid; gap: var(--s5); }
 .news h2 { margin: 0; font-size: clamp(1.625rem, 3.5vw, 2.25rem); font-weight: 600; }
 .news p { margin: 0; color: var(--mu); }
@@ -120,11 +120,11 @@ section { padding: var(--s12) 0; }
 .news .msg { font-size: .875rem; min-height: 1.3em; }
 @media (min-width: 860px) { .news { grid-template-columns: 1fr 1fr; align-items: center; padding: var(--s12); } }
 
-/* — Pied de page — */
+/* Pied de page */
 footer { padding: var(--s10) 0 var(--s12); color: var(--mu); font-size: .875rem; border-top: 1px solid var(--bd); margin-top: var(--s12); }
 footer .cols { display: flex; flex-wrap: wrap; justify-content: space-between; gap: var(--s5); }
 
-/* — Fiche produit — */
+/* Fiche produit */
 .crumbs { font-size: .875rem; color: var(--mu); padding: var(--s5) 0 0; }
 .crumbs a { color: var(--mu); }
 .pdp { display: grid; gap: var(--s8); padding: var(--s6) 0 var(--s12); }
@@ -168,7 +168,7 @@ legend { font-size: .875rem; font-weight: 550; margin-bottom: var(--s3); }
 .sticky-buy .btn { flex: 1; }
 @media (min-width: 900px) { .sticky-buy { display: none; } }
 
-/* — Panier (tiroir) — */
+/* Panier (tiroir) */
 .scrim { position: fixed; inset: 0; z-index: 40; background: var(--scrim); opacity: 0; pointer-events: none; transition: opacity var(--d-sheet) var(--ease-out); }
 .scrim.open { opacity: 1; pointer-events: auto; }
 .drawer { position: fixed; z-index: 41; top: 0; right: 0; height: 100dvh; width: min(420px, 100%); background: var(--bg); border-left: 1px solid var(--bd);
@@ -195,7 +195,7 @@ legend { font-size: .875rem; font-weight: 550; margin-bottom: var(--s3); }
 .steps { display: flex; gap: var(--s2); font-size: .75rem; color: var(--mu); margin: var(--s3) 0 0; padding: 0; list-style: none; }
 .steps li[aria-current] { color: var(--accent-text); font-weight: 600; }
 
-/* — Toast — */
+/* Toast */
 .toast { position: fixed; left: 50%; bottom: 24px; z-index: 60; transform: translate(-50%, calc(100% + 48px)); visibility: hidden; padding: 12px 18px; border-radius: var(--r-pill);
          background: var(--tx); color: var(--blanc); font-size: .9375rem; display: flex; gap: 8px; align-items: center;
          transition: transform var(--sp-pop-d) var(--sp-pop), visibility 0s linear var(--sp-pop-d); }

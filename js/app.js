@@ -1,4 +1,4 @@
-/* Zépis Lil — boutique concept. Panier simulé : aucun paiement, aucune donnée envoyée. */
+/* Zépis Lil: boutique concept. Panier simulé : aucun paiement, aucune donnée envoyée. */
 
 const PRODUCTS = {
   vanille: {
@@ -49,7 +49,7 @@ const icon = {
   trash: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.5 7H19.5"/><path d="M9.5 7V5.2A1.2 1.2 0 0 1 10.7 4H13.3A1.2 1.2 0 0 1 14.5 5.2V7"/><path d="M6.3 7L7.1 18.8A1.2 1.2 0 0 0 8.3 20H15.7A1.2 1.2 0 0 0 16.9 18.8L17.7 7"/><path d="M10.2 11V16M13.8 11V16"/></svg>',
 };
 
-/* — Panier — */
+/* Panier */
 const cart = {
   items: [],
   load() { try { this.items = JSON.parse(localStorage.getItem("zl-cart")) || []; } catch { this.items = []; } },
@@ -82,14 +82,14 @@ function render() {
   }
   const t = cart.total(), left = Math.max(0, FREE_SHIPPING - t);
   document.querySelector("#sub").textContent = rs(t);
-  document.querySelector("#ship").textContent = t === 0 ? "—" : left === 0 ? "Offerte" : rs(150);
+  document.querySelector("#ship").textContent = t === 0 ? "Rs 0" : left === 0 ? "Offerte" : rs(150);
   document.querySelector("#total").textContent = rs(t === 0 ? 0 : t + (left === 0 ? 0 : 150));
   document.querySelector("#bar").style.width = Math.min(100, (t / FREE_SHIPPING) * 100) + "%";
   document.querySelector("#hint").textContent = left === 0 ? "Livraison offerte à Maurice." : `Plus que ${rs(left)} pour la livraison offerte.`;
   document.querySelector("#checkout").disabled = t === 0;
 }
 
-/* — Tiroir : focus piégé, Échap pour fermer — */
+/* Tiroir : focus piégé, Échap pour fermer */
 let lastFocus;
 function openCart() {
   lastFocus = document.activeElement;
@@ -112,7 +112,7 @@ function toast(msg) {
   toastTimer = setTimeout(() => t.classList.remove("show"), 2200);
 }
 
-/* — Grille des best-sellers — */
+/* Grille des best-sellers */
 function renderGrid() {
   const g = document.querySelector("#grid");
   if (!g) return;
@@ -123,7 +123,7 @@ function renderGrid() {
       <button class="add-mini press" data-add="${k}" aria-label="Ajouter ${p.name} au panier">${icon.plus}</button></div></div></article>`).join("");
 }
 
-/* — Fiche produit — */
+/* Fiche produit */
 function renderPdp() {
   const root = document.querySelector("#pdp");
   if (!root) return;
@@ -165,7 +165,7 @@ function renderPdp() {
     .observe(root.querySelector(".buy"));
 }
 
-/* — Démarrage — */
+/* Démarrage */
 cart.load();
 renderGrid();
 renderPdp();
