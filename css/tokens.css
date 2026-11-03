@@ -1,0 +1,151 @@
+/* ==========================================================================
+   design-perso — tokens.css
+   Source de vérité des tokens (couleurs, matière, mouvement, formes, texte).
+   Clair + sombre automatiques (prefers-color-scheme), forçables avec
+   <html data-theme="light|dark">. AUCUNE ombre par défaut : bordures + verre.
+   Police : Geist (Google Fonts : family=Geist:wght@100..900&family=Geist+Mono)
+   ========================================================================== */
+
+:root {
+  color-scheme: light dark;
+
+  /* — Marque (palette-couleurs.css) — */
+  --bleu: #0B5CFF;          /* couleur principale / accent / liens */
+  --orange: #FF915E;        /* accent / actions (CTA, mise en avant) */
+  --anthracite: #292929;    /* texte fort / fonds sombres de marque */
+  --blanc: #FFFFFF;
+  --gris-clair: #F3F4F6;
+
+  /* — Neutres chauds : clair — */
+  --bg: #FAF9F5;            /* fond de page */
+  --sb: #F5F3EF;            /* barre latérale, zones secondaires */
+  --cd: #FFFFFF;            /* cartes, feuilles */
+  --hv: #F0EEE8;            /* survol, fond de contrôle */
+  --bd: #DDD9D1;            /* bordure fine 1px */
+  --tx: #1F1915;            /* texte principal */
+  --mu: #77716A;            /* texte secondaire */
+
+  /* — Accent — */
+  --accent: var(--bleu);    /* aplats : boutons, sélection */
+  --accent-ink: #FFFFFF;    /* texte sur aplat bleu (contraste 5,3:1) */
+  --accent-text: #0B5CFF;   /* liens et texte bleu sur fond clair */
+  --accent-soft: #E7EFFF;   /* fond doux bleu */
+  --action: var(--orange);
+  --action-ink: var(--anthracite); /* texte sur orange (contraste 6,5:1) */
+
+  /* — États — */
+  --ok: #1E6B35;   --ok-bg: #E3F3E6;
+  --err: #A8321F;  --err-bg: #FBE4E1;
+  --warn: #9A4A12; --warn-bg: #FFEBDD;
+
+  /* — Teintes douces (pastilles, fonds de blocs) — */
+  --peach: #FFEADD; --sky: #E5EEFF; --sand: #FEF1DA; --mint: #E3F5EA;
+
+  /* — Couleurs Apple : secondaires (clair) — */
+  --a-blue: #007AFF;   --a-green: #34C759;  --a-red: #FF3B30;
+  --a-orange: #FF9500; --a-yellow: #FFCC00; --a-teal: #30B0C7;
+  --a-cyan: #32ADE6;   --a-mint: #00C7BE;   --a-indigo: #5856D6;
+  --a-purple: #AF52DE; --a-pink: #FF2D55;   --a-brown: #A2845E;
+
+  /* — Matière (verre) — */
+  --glass: rgba(250, 249, 245, .72);
+  --glass-filter: blur(24px) saturate(180%);   /* plage 16–30px, jamais > 30 */
+  --scrim: rgba(41, 41, 41, .42);              /* voile des feuilles modales */
+  --ring: rgba(11, 92, 255, .28);              /* anneau de focus */
+
+  /* — Mouvement : courbes — */
+  --ease-out: cubic-bezier(.23, 1, .32, 1);     /* entrées, sorties, défaut */
+  --ease-io: cubic-bezier(.77, 0, .175, 1);     /* déplacement à l'écran */
+  --ease-drawer: cubic-bezier(.32, .72, 0, 1);  /* feuilles façon iOS */
+  --ease-spring: cubic-bezier(.34, 1.56, .64, 1); /* repli CSS d'un ressort rebondissant */
+  /* Ressorts réels : --sp-nav / --sp-pop / --sp-soft (+ -d durée) posés par motion.js */
+  --sp-nav: cubic-bezier(.25, 1, .35, 1);  --sp-nav-d: 450ms;
+  --sp-pop: var(--ease-spring);            --sp-pop-d: 550ms;
+  --sp-soft: cubic-bezier(.25, 1, .35, 1); --sp-soft-d: 450ms;
+
+  /* — Mouvement : durées de repli — */
+  --d-press: 100ms;  --d-fast: 160ms;  --d-base: 240ms;
+  --d-sheet: 400ms;  --d-page: 520ms;
+
+  /* — Formes — */
+  --r-xs: 6px; --r-s: 8px; --r-m: 12px; --r-l: 14px;
+  --r-xl: 20px; --r-card: 26px; --r-pill: 999px;
+
+  /* — Espacement : base 4 — */
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 20px;
+  --s6: 24px; --s8: 32px; --s10: 40px; --s12: 48px; --s16: 64px;
+
+  /* — Texte — */
+  --font: "Geist", -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+  --mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+
+/* — Sombre : variables partagées — */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #1F1D1A; --sb: #262421; --cd: #2A2825; --hv: #2F2C28; --bd: #3A3733;
+  --tx: #F2EFE8; --mu: #A09A90;
+  --accent-text: #6B9BFF;  --accent-soft: #1A2748;
+  --ok: #7FD39A;   --ok-bg: #1F3527;
+  --err: #F29A8C;  --err-bg: #3E2420;
+  --warn: #FFB27F; --warn-bg: #3D3420;
+  --peach: #4A3226; --sky: #17294D; --sand: #3D3420; --mint: #173D28;
+  --a-blue: #0A84FF;   --a-green: #30D158;  --a-red: #FF453A;
+  --a-orange: #FF9F0A; --a-yellow: #FFD60A; --a-teal: #40C8E0;
+  --a-cyan: #64D2FF;   --a-mint: #63E6E2;   --a-indigo: #5E5CE6;
+  --a-purple: #BF5AF2; --a-pink: #FF375F;   --a-brown: #AC8E68;
+  --glass: rgba(31, 29, 26, .72);
+  --scrim: rgba(0, 0, 0, .55);
+  --ring: rgba(107, 155, 255, .42);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #1F1D1A; --sb: #262421; --cd: #2A2825; --hv: #2F2C28; --bd: #3A3733;
+    --tx: #F2EFE8; --mu: #A09A90;
+    --accent-text: #6B9BFF;  --accent-soft: #1A2748;
+    --ok: #7FD39A;   --ok-bg: #1F3527;
+    --err: #F29A8C;  --err-bg: #3E2420;
+    --warn: #FFB27F; --warn-bg: #3D3420;
+    --peach: #4A3226; --sky: #17294D; --sand: #3D3420; --mint: #173D28;
+    --a-blue: #0A84FF;   --a-green: #30D158;  --a-red: #FF453A;
+    --a-orange: #FF9F0A; --a-yellow: #FFD60A; --a-teal: #40C8E0;
+    --a-cyan: #64D2FF;   --a-mint: #63E6E2;   --a-indigo: #5E5CE6;
+    --a-purple: #BF5AF2; --a-pink: #FF375F;   --a-brown: #AC8E68;
+    --glass: rgba(31, 29, 26, .72);
+    --scrim: rgba(0, 0, 0, .55);
+    --ring: rgba(107, 155, 255, .42);
+  }
+}
+
+/* — Accessibilité : transparence et contraste — */
+@media (prefers-reduced-transparency: reduce) {
+  :root { --glass: var(--cd); --glass-filter: none; }
+}
+@media (prefers-contrast: more) {
+  :root { --bd: color-mix(in srgb, var(--tx) 55%, transparent); }
+}
+
+/* — Base — */
+html { font-family: var(--font); font-optical-sizing: auto; -webkit-font-smoothing: antialiased;
+       background: var(--bg); color: var(--tx); text-size-adjust: 100%; }
+body { margin: 0; font-size: 1rem; line-height: 1.5; }
+h1, h2, .display { letter-spacing: -.03em; line-height: 1.08; }   /* grand texte : serré */
+small, .caption { letter-spacing: .005em; }                       /* petit texte : légèrement ouvert */
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* — Matière verre : une seule couche réelle, bordure fine, AUCUNE ombre — */
+.glass { background: var(--glass); backdrop-filter: var(--glass-filter);
+         -webkit-backdrop-filter: var(--glass-filter); border: 1px solid var(--bd); box-shadow: none; }
+
+/* — Appui : retour immédiat — */
+.press { transition: transform var(--d-press) var(--ease-out); -webkit-tap-highlight-color: transparent; }
+.press:active { transform: scale(.97); }          /* .88 petites icônes · .93 icônes · .97 boutons · .985 grandes surfaces */
+
+/* — Survol uniquement sur pointeur précis — */
+@media (hover: hover) and (pointer: fine) { .hov:hover { background: var(--hv); } }
+
+/* — Mouvement réduit : fondu court, plus de déplacement ni de rebond — */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 1ms !important; animation-duration: 1ms !important; scroll-behavior: auto !important; }
+}
