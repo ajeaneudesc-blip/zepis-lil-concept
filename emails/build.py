@@ -65,7 +65,7 @@ def p(text):
     return f'<p style="margin:0 0 20px 0;font-family:{FONT};font-size:16px;line-height:24px;color:{MU};">{text}</p>'
 
 
-def button(label, href="https://example.com"):
+def button(label, href=f"{SITE}/"):
     return f"""<table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin-top:8px;"><tr>
 <td style="background:{TX};"><a href="{href}" style="display:inline-block;padding:15px 28px;font-family:{FONT};font-size:16px;font-weight:500;color:{WH};text-decoration:none;">{label}</a></td>
 </tr></table>"""
@@ -95,7 +95,7 @@ welcome = "\n".join([
     f'<td align="center" style="padding:20px;border:1px dashed {TX};font-family:{FONT};font-size:24px;font-weight:600;letter-spacing:2px;color:{TX};">BIENVENUE10</td></tr></table>',
     '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 24px 0;"><tr>',
     *[f'<td class="stack" width="33%" valign="top" style="padding:0 {6 if i < 2 else 0}px 0 0;">'
-      f'<img src="{IMG[n.split()[0]]}" width="100%" height="120" alt="{n}" style="display:block;width:100%;height:120px;object-fit:cover;border-bottom:4px solid {TX};"></div>'
+      f'<img src="{IMG[n.split()[0]]}" width="100%" height="120" alt="{n}" style="display:block;width:100%;height:120px;object-fit:cover;border-bottom:4px solid {TX};">'
       f'<p style="margin:8px 0 0 0;font-family:{FONT};font-size:14px;color:{TX};">{n}<br><span style="color:{MU};">{pr}</span></p></td>'
       for i, (n, pr) in enumerate([("Vanille Bourbon", "dès Rs 450"), ("Thé à la vanille", "dès Rs 290"), ("Cari maison", "dès Rs 220")])],
     '</tr></table>',
