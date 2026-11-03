@@ -1,6 +1,23 @@
 /* Zépis Lil — boutique concept (projet personnel, marque fictive)
    S'appuie sur tokens.css : aucune couleur en dur ici, aucune ombre. */
 
+/* Direction du projet (demande de Jean Eudes) : fond 100 % blanc, aucun arrondi,
+   ni bleu ni orange, police Poppins. Ces valeurs remplacent celles de tokens.css. */
+:root, :root[data-theme] {
+  color-scheme: light;
+  --bg: #FFFFFF; --sb: #F5F5F5; --cd: #FFFFFF; --hv: #F0F0F0; --bd: #DADADA;
+  --tx: #111111; --mu: #666666;
+  --accent: #111111; --accent-ink: #FFFFFF; --accent-text: #111111; --accent-soft: #F0F0F0;
+  --action: #111111; --action-ink: #FFFFFF;
+  --peach: #F5F5F5; --sky: #F5F5F5; --sand: #F5F5F5; --mint: #F5F5F5;
+  --ok: #111111; --warn: #111111; --warn-bg: #F0F0F0;
+  --glass: rgba(255, 255, 255, .86);
+  --ring: rgba(17, 17, 17, .3);
+  --r-xs: 0; --r-s: 0; --r-m: 0; --r-l: 0; --r-xl: 0; --r-card: 0; --r-pill: 0;
+  --font: "Poppins", -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+}
+.logo i { border-radius: 0 !important; }
+
 *, *::before, *::after { box-sizing: border-box; }
 img, svg { display: block; max-width: 100%; }
 a { color: var(--accent-text); }
@@ -12,14 +29,14 @@ button { font: inherit; color: inherit; }
 .skip:focus { top: 12px; }
 
 /* — Bandeau concept — */
-.concept { background: var(--anthracite); color: var(--blanc); font-size: .8125rem; text-align: center; padding: 8px 16px; }
+.concept { background: var(--tx); color: var(--blanc); font-size: .8125rem; text-align: center; padding: 8px 16px; }
 
 /* — En-tête en verre — */
 .nav { position: sticky; top: 0; z-index: 20; }
 .nav .glass { border-width: 0 0 1px; }
 .nav-in { display: flex; align-items: center; gap: var(--s4); height: 60px; }
 .logo { font-weight: 650; font-size: 1.125rem; letter-spacing: -.02em; color: var(--tx); text-decoration: none; display: flex; align-items: center; gap: 8px; }
-.logo i { width: 22px; height: 22px; border-radius: 50%; background: var(--orange); display: inline-block; }
+.logo i { width: 22px; height: 22px; background: var(--tx); display: inline-block; }
 .nav-links { display: none; gap: var(--s6); margin-left: var(--s8); }
 .nav-links a { color: var(--mu); text-decoration: none; font-size: .9375rem; }
 .nav-links a:hover { color: var(--tx); }
@@ -28,7 +45,7 @@ button { font: inherit; color: inherit; }
             display: grid; place-items: center; cursor: pointer; position: relative; }
 .icon-btn svg { width: 20px; height: 20px; }
 .badge { position: absolute; top: -4px; right: -4px; min-width: 20px; height: 20px; padding: 0 5px; border-radius: var(--r-pill);
-         background: var(--orange); color: var(--anthracite); font-size: .75rem; font-weight: 600; display: grid; place-items: center; }
+         background: var(--tx); color: var(--blanc); font-size: .75rem; font-weight: 600; display: grid; place-items: center; }
 .badge[hidden] { display: none; }
 @media (min-width: 760px) { .nav-links { display: flex; } }
 
@@ -91,15 +108,15 @@ section { padding: var(--s12) 0; }
 .review { background: var(--cd); border: 1px solid var(--bd); border-radius: var(--r-xl); padding: var(--s5); margin: 0; }
 .review blockquote { margin: 0 0 var(--s3); font-size: .9375rem; }
 .review figcaption { font-size: .8125rem; color: var(--mu); }
-.stars { color: var(--orange); letter-spacing: 2px; margin-bottom: var(--s2); font-size: .9375rem; }
+.stars { color: var(--tx); letter-spacing: 2px; margin-bottom: var(--s2); font-size: .9375rem; }
 
 /* — Bloc newsletter — */
-.news { background: var(--accent); color: var(--accent-ink); border-radius: var(--r-card); padding: var(--s10) var(--s6); display: grid; gap: var(--s5); }
+.news { background: var(--sb); color: var(--tx); border: 1px solid var(--bd); border-radius: var(--r-card); padding: var(--s10) var(--s6); display: grid; gap: var(--s5); }
 .news h2 { margin: 0; font-size: clamp(1.625rem, 3.5vw, 2.25rem); font-weight: 600; }
-.news p { margin: 0; opacity: .9; }
+.news p { margin: 0; color: var(--mu); }
 .news form { display: flex; flex-wrap: wrap; gap: var(--s2); }
-.news input { flex: 1 1 220px; min-height: 48px; border-radius: var(--r-pill); border: 0; padding: 0 18px; font: inherit; background: var(--blanc); color: var(--anthracite); }
-.news input:focus-visible, .news button:focus-visible { outline-color: var(--blanc); }
+.news input { flex: 1 1 220px; min-height: 48px; border-radius: var(--r-pill); border: 0; padding: 0 18px; font: inherit; background: var(--cd); color: var(--tx); border: 1px solid var(--bd); }
+
 .news .msg { font-size: .875rem; min-height: 1.3em; }
 @media (min-width: 860px) { .news { grid-template-columns: 1fr 1fr; align-items: center; padding: var(--s12); } }
 
@@ -180,7 +197,7 @@ legend { font-size: .875rem; font-weight: 550; margin-bottom: var(--s3); }
 
 /* — Toast — */
 .toast { position: fixed; left: 50%; bottom: 24px; z-index: 60; transform: translate(-50%, calc(100% + 48px)); visibility: hidden; padding: 12px 18px; border-radius: var(--r-pill);
-         background: var(--anthracite); color: var(--blanc); font-size: .9375rem; display: flex; gap: 8px; align-items: center;
+         background: var(--tx); color: var(--blanc); font-size: .9375rem; display: flex; gap: 8px; align-items: center;
          transition: transform var(--sp-pop-d) var(--sp-pop), visibility 0s linear var(--sp-pop-d); }
 .toast.show { transition-delay: 0s; }
 .toast.show { transform: translate(-50%, 0); visibility: visible; }

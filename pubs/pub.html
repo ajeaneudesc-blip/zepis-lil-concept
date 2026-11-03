@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<title>Pub Zépis Lil (concept)</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+<style>
+  /* Une pub par URL : pub.html?v=produit|offre|recette&f=carre|story
+     Format carré 1080×1080, story 1080×1920. Noir et blanc, aucun arrondi. */
+  :root { --tx: #111111; --mu: #666666; --bd: #DADADA; --sb: #F5F5F5; --wh: #FFFFFF; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { background: var(--wh); }
+  body { font-family: Poppins, Arial, sans-serif; color: var(--tx); }
+  .ad { width: 1080px; height: 1080px; padding: 80px; display: flex; flex-direction: column; overflow: hidden; position: relative; background: var(--wh); }
+  .story { height: 1920px; padding: 120px 80px 200px; }
+  .brand { display: flex; align-items: center; gap: 16px; font-size: 34px; font-weight: 600; }
+  .brand i { width: 30px; height: 30px; background: var(--tx); }
+  .art { background: var(--sb); flex: 1; min-height: 0; margin: 48px 0 40px; display: grid; place-items: center; }
+  .art svg { width: auto; height: 80%; max-width: 80%; }
+  .ad:not(.story) { padding-bottom: 120px; }
+  .ad:not(.story) h1 { font-size: 76px; }
+  .ad:not(.story) .sub { margin-top: 12px; }
+  h1 { font-size: 92px; line-height: 1.02; font-weight: 600; letter-spacing: -.035em; }
+  .story h1 { font-size: 112px; }
+  .sub { font-size: 34px; line-height: 1.4; color: var(--mu); margin-top: 24px; }
+  .cta { display: inline-block; margin-top: 40px; background: var(--tx); color: var(--wh); font-size: 32px; font-weight: 500; padding: 26px 44px; align-self: flex-start; }
+  .big { font-size: 360px; line-height: .9; font-weight: 600; letter-spacing: -.06em; }
+  .story .big { font-size: 440px; }
+  .code { display: inline-block; margin-top: 40px; border: 3px dashed var(--tx); padding: 22px 36px; font-size: 40px; font-weight: 600; letter-spacing: .08em; align-self: flex-start; }
+  .note { position: absolute; left: 80px; bottom: 40px; font-size: 22px; color: var(--mu); }
+  .story .note { bottom: 80px; }
+  .grow { flex: 1; }
+  .steps { list-style: none; padding: 0; margin-top: 48px; border-top: 2px solid var(--tx); }
+  .steps li { display: flex; gap: 32px; font-size: 36px; padding: 26px 0; border-bottom: 1px solid var(--bd); }
+  .steps b { font-weight: 600; min-width: 64px; }
+</style>
+</head>
+<body>
+<div class="ad" id="ad"></div>
+<script>
+  const q = new URLSearchParams(location.search);
+  const v = q.get("v") || "produit", f = q.get("f") || "carre";
+  const ad = document.getElementById("ad");
+  if (f === "story") ad.classList.add("story");
+  const brand = '<div class="brand"><i></i>Zépis Lil</div>';
+  const note = '<p class="note">Concept de design · marque fictive, aucune vente réelle</p>';
+  const pod = '<svg viewBox="0 0 400 400" aria-hidden="true"><rect x="240" y="60" width="100" height="100" fill="#DADADA"/><g transform="rotate(-24 200 230)"><rect x="40" y="214" width="320" height="24" fill="#111"/><rect x="58" y="246" width="290" height="20" fill="#666"/><rect x="76" y="274" width="250" height="16" fill="#111"/></g></svg>';
+  const V = {
+    produit: `${brand}<div class="art">${pod}</div><h1>Vanille Bourbon<br>de Maurice.</h1><p class="sub">Gousses souples, dès Rs 450.</p>`,
+    offre: `${brand}<div class="grow"></div><p class="big">-10 %</p><h1>sur votre première commande.</h1><span class="code">BIENVENUE10</span><div class="grow"></div>`,
+    recette: `${brand}<div class="grow"></div><h1>Une recette dans chaque colis.</h1><ol class="steps"><li><b>01</b>2 gousses de vanille fendues</li><li><b>02</b>70 cl de rhum blanc</li><li><b>03</b>4 semaines au repos</li></ol><span class="cta">Découvrir la vanille</span><div class="grow"></div>`,
+  };
+  ad.innerHTML = V[v] + note;
+</script>
+</body>
+</html>

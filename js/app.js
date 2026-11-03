@@ -33,12 +33,12 @@ const rs = (n) => "Rs " + n.toLocaleString("fr-FR");
 /* Illustrations vectorielles : produits dessinés, pas de photo. */
 function art(key, view = 0) {
   const p = PRODUCTS[key];
-  const bg = `var(${p.tint})`;
+  const bg = "var(--sb)";
   const shapes = {
-    pod: `<g transform="rotate(${-28 + view * 20} 200 200)"><rect x="70" y="186" width="260" height="22" rx="11" fill="var(--anthracite)"/><rect x="80" y="214" width="240" height="18" rx="9" fill="#4a3a2e"/><path d="M330 197c18-4 26-14 30-26" stroke="var(--anthracite)" stroke-width="6" fill="none" stroke-linecap="round"/></g><circle cx="300" cy="110" r="26" fill="var(--orange)"/>`,
-    tea: `<rect x="130" y="${120 - view * 10}" width="140" height="190" rx="18" fill="var(--bleu)"/><rect x="150" y="150" width="100" height="60" rx="10" fill="var(--blanc)"/><text x="200" y="188" font-family="Geist, sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="var(--anthracite)">THÉ</text><circle cx="200" cy="260" r="16" fill="var(--orange)"/>`,
-    jar: `<rect x="140" y="${110 + view * 6}" width="120" height="30" rx="8" fill="var(--anthracite)"/><rect x="125" y="140" width="150" height="170" rx="24" fill="var(--orange)"/><rect x="145" y="190" width="110" height="64" rx="10" fill="var(--blanc)"/><text x="200" y="230" font-family="Geist, sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="var(--anthracite)">CARI</text>`,
-    chili: `<rect x="150" y="120" width="100" height="26" rx="8" fill="var(--bleu)"/><rect x="135" y="146" width="130" height="164" rx="22" fill="var(--blanc)" stroke="var(--anthracite)" stroke-width="3"/><path d="M175 ${270 - view * 8}c10-60 40-80 60-90-6 30-26 70-60 90z" fill="#C8371E"/><path d="M228 180c6-8 12-10 18-10" stroke="#2E7D46" stroke-width="5" stroke-linecap="round" fill="none"/>`,
+    pod: `<rect x="250" y="70" width="80" height="80" fill="var(--bd)"/><g transform="rotate(${-28 + view * 20} 200 200)"><rect x="70" y="186" width="260" height="20" fill="var(--tx)"/><rect x="80" y="214" width="240" height="16" fill="var(--mu)"/></g>`,
+    tea: `<rect x="130" y="${120 - view * 10}" width="140" height="190" fill="var(--tx)"/><rect x="150" y="150" width="100" height="56" fill="var(--cd)"/><text x="200" y="186" font-family="Poppins, sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="var(--tx)">THÉ</text>`,
+    jar: `<rect x="140" y="${110 + view * 6}" width="120" height="28" fill="var(--tx)"/><rect x="125" y="140" width="150" height="170" fill="var(--mu)"/><rect x="145" y="190" width="110" height="60" fill="var(--cd)"/><text x="200" y="228" font-family="Poppins, sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="var(--tx)">CARI</text>`,
+    chili: `<rect x="150" y="120" width="100" height="24" fill="var(--tx)"/><rect x="135" y="146" width="130" height="164" fill="var(--cd)" stroke="var(--tx)" stroke-width="3"/><path d="M175 ${270 - view * 8}c10-60 40-80 60-90-6 30-26 70-60 90z" fill="var(--tx)"/>`,
   };
   return `<svg viewBox="0 0 400 400" role="img" aria-label="Illustration : ${p.name}"><rect width="400" height="400" fill="${bg}"/>${shapes[p.art]}</svg>`;
 }
@@ -201,11 +201,4 @@ document.querySelector("#news")?.addEventListener("submit", (e) => {
   e.preventDefault();
   e.target.querySelector(".msg").textContent = "Merci ! (démo : aucune adresse n'est enregistrée)";
   e.target.reset();
-});
-
-/* Thème forçable */
-document.querySelector("[data-theme-toggle]")?.addEventListener("click", () => {
-  const html = document.documentElement;
-  const dark = html.dataset.theme ? html.dataset.theme === "dark" : matchMedia("(prefers-color-scheme: dark)").matches;
-  html.dataset.theme = dark ? "light" : "dark";
 });
