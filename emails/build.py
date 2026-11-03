@@ -6,7 +6,9 @@ Lancer : python build.py
 """
 from pathlib import Path
 
-IMG = {"Vanille": "../img/vanille/vanille-sidath-vimukthi.webp", "Thé": "../img/the/the-alice-pasqual.webp", "Cari": "../img/cari/cari-anju-ravindranath.webp"}
+# Adresse du site en ligne : les images doivent être accessibles depuis la boîte de réception.
+SITE = "https://ajeaneudesc-blip.github.io/zepis-lil-concept"
+IMG = {"Vanille": f"{SITE}/img/vanille/vanille-sidath-vimukthi.webp", "Thé": f"{SITE}/img/the/the-alice-pasqual.webp", "Cari": f"{SITE}/img/cari/cari-anju-ravindranath.webp"}
 TX, MU, BD, SB, WH = "#111111", "#666666", "#DADADA", "#F5F5F5", "#FFFFFF"
 FONT = "Poppins, Arial, Helvetica, sans-serif"
 
