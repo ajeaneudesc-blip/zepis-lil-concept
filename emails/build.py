@@ -6,6 +6,7 @@ Lancer : python build.py
 """
 from pathlib import Path
 
+IMG = {"Vanille": "../img/vanille/vanille-sidath-vimukthi.jpg", "Thé": "../img/the/the-alice-pasqual.jpg", "Cari": "../img/cari/cari-anju-ravindranath.jpg"}
 TX, MU, BD, SB, WH = "#111111", "#666666", "#DADADA", "#F5F5F5", "#FFFFFF"
 FONT = "Poppins, Arial, Helvetica, sans-serif"
 
@@ -70,7 +71,7 @@ def button(label, href="https://example.com"):
 
 def line(name, detail, price):
     return f"""<tr>
-<td width="64" style="padding:12px 0;border-bottom:1px solid {BD};"><div style="width:64px;height:64px;background:{SB};"></div></td>
+<td width="64" style="padding:12px 0;border-bottom:1px solid {BD};"><img src="{IMG[name.split()[0].replace('Gousses','Vanille').replace('Thé','Thé')]}" width="64" height="64" alt="{name}" style="display:block;width:64px;height:64px;object-fit:cover;"></td>
 <td style="padding:12px 16px;border-bottom:1px solid {BD};font-family:{FONT};font-size:14px;line-height:20px;color:{TX};">{name}<br><span style="color:{MU};font-size:13px;">{detail}</span></td>
 <td align="right" style="padding:12px 0;white-space:nowrap;border-bottom:1px solid {BD};font-family:{FONT};font-size:14px;color:{TX};">{price}</td>
 </tr>"""
@@ -92,7 +93,7 @@ welcome = "\n".join([
     f'<td align="center" style="padding:20px;border:1px dashed {TX};font-family:{FONT};font-size:24px;font-weight:600;letter-spacing:2px;color:{TX};">BIENVENUE10</td></tr></table>',
     '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:0 0 24px 0;"><tr>',
     *[f'<td class="stack" width="33%" valign="top" style="padding:0 {6 if i < 2 else 0}px 0 0;">'
-      f'<div style="height:120px;background:{SB};border-bottom:4px solid {TX};"></div>'
+      f'<img src="{IMG[n.split()[0]]}" width="100%" height="120" alt="{n}" style="display:block;width:100%;height:120px;object-fit:cover;border-bottom:4px solid {TX};"></div>'
       f'<p style="margin:8px 0 0 0;font-family:{FONT};font-size:14px;color:{TX};">{n}<br><span style="color:{MU};">{pr}</span></p></td>'
       for i, (n, pr) in enumerate([("Vanille Bourbon", "dès Rs 450"), ("Thé à la vanille", "dès Rs 290"), ("Cari maison", "dès Rs 220")])],
     '</tr></table>',

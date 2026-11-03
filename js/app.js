@@ -30,17 +30,17 @@ const PRODUCTS = {
 const FREE_SHIPPING = 1500; // Rs, seuil fictif de la maquette
 const rs = (n) => "Rs " + n.toLocaleString("fr-FR");
 
-/* Illustrations vectorielles : produits dessinés, pas de photo. */
+/* Photos des produits (Unsplash, voir img/CREDITS.md). Le « view » change le cadrage. */
+const PHOTOS = {
+  vanille: "img/vanille/vanille-sidath-vimukthi.jpg",
+  the: "img/the/the-alice-pasqual.jpg",
+  cari: "img/cari/cari-anju-ravindranath.jpg",
+  piment: "img/piment/piment-abhishek-hajare.jpg",
+};
 function art(key, view = 0) {
   const p = PRODUCTS[key];
-  const bg = "var(--sb)";
-  const shapes = {
-    pod: `<rect x="250" y="70" width="80" height="80" fill="var(--bd)"/><g transform="rotate(${-28 + view * 20} 200 200)"><rect x="70" y="186" width="260" height="20" fill="var(--tx)"/><rect x="80" y="214" width="240" height="16" fill="var(--mu)"/></g>`,
-    tea: `<rect x="130" y="${120 - view * 10}" width="140" height="190" fill="var(--tx)"/><rect x="150" y="150" width="100" height="56" fill="var(--cd)"/><text x="200" y="186" font-family="Poppins, sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="var(--tx)">THÉ</text>`,
-    jar: `<rect x="140" y="${110 + view * 6}" width="120" height="28" fill="var(--tx)"/><rect x="125" y="140" width="150" height="170" fill="var(--mu)"/><rect x="145" y="190" width="110" height="60" fill="var(--cd)"/><text x="200" y="228" font-family="Poppins, sans-serif" font-size="20" font-weight="600" text-anchor="middle" fill="var(--tx)">CARI</text>`,
-    chili: `<rect x="150" y="120" width="100" height="24" fill="var(--tx)"/><rect x="135" y="146" width="130" height="164" fill="var(--cd)" stroke="var(--tx)" stroke-width="3"/><path d="M175 ${270 - view * 8}c10-60 40-80 60-90-6 30-26 70-60 90z" fill="var(--tx)"/>`,
-  };
-  return `<svg viewBox="0 0 400 400" role="img" aria-label="Illustration : ${p.name}"><rect width="400" height="400" fill="${bg}"/>${shapes[p.art]}</svg>`;
+  const pos = ["50% 50%", "20% 40%", "80% 60%"][view];
+  return `<img class="ph" src="${PHOTOS[key]}" alt="${p.name}" loading="lazy" style="object-position:${pos}">`;
 }
 
 const icon = {
