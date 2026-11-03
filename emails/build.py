@@ -6,7 +6,7 @@ Lancer : python build.py
 """
 from pathlib import Path
 
-IMG = {"Vanille": "../img/vanille/vanille-sidath-vimukthi.jpg", "Thé": "../img/the/the-alice-pasqual.jpg", "Cari": "../img/cari/cari-anju-ravindranath.jpg"}
+IMG = {"Vanille": "../img/vanille/vanille-sidath-vimukthi.webp", "Thé": "../img/the/the-alice-pasqual.webp", "Cari": "../img/cari/cari-anju-ravindranath.webp"}
 TX, MU, BD, SB, WH = "#111111", "#666666", "#DADADA", "#F5F5F5", "#FFFFFF"
 FONT = "Poppins, Arial, Helvetica, sans-serif"
 

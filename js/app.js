@@ -32,10 +32,10 @@ const rs = (n) => "Rs " + n.toLocaleString("fr-FR");
 
 /* Photos des produits (Unsplash, voir img/CREDITS.md). Le « view » change le cadrage. */
 const PHOTOS = {
-  vanille: "img/vanille/vanille-sidath-vimukthi.jpg",
-  the: "img/the/the-alice-pasqual.jpg",
-  cari: "img/cari/cari-anju-ravindranath.jpg",
-  piment: "img/piment/piment-abhishek-hajare.jpg",
+  vanille: "img/vanille/vanille-sidath-vimukthi.webp",
+  the: "img/the/the-alice-pasqual.webp",
+  cari: "img/cari/cari-anju-ravindranath.webp",
+  piment: "img/piment/piment-abhishek-hajare.webp",
 };
 function art(key, view = 0) {
   const p = PRODUCTS[key];
