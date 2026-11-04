@@ -5,12 +5,12 @@
    ni bleu ni orange, police Poppins. Ces valeurs remplacent celles de tokens.css. */
 :root, :root[data-theme] {
   color-scheme: light;
-  --bg: #FFFFFF; --sb: #F5F5F5; --cd: #FFFFFF; --hv: #F0F0F0; --bd: #DADADA;
+  --bg: #FFFFFF; --sb: #FFFFFF; --cd: #FFFFFF; --hv: #F0F0F0; --bd: #DADADA;
   --tx: #111111; --mu: #666666;
   --accent: #111111; --accent-ink: #FFFFFF; --accent-text: #111111; --accent-soft: #F0F0F0;
   --action: #111111; --action-ink: #FFFFFF;
-  --peach: #F5F5F5; --sky: #F5F5F5; --sand: #F5F5F5; --mint: #F5F5F5;
-  --ok: #111111; --warn: #111111; --warn-bg: #F0F0F0;
+  --peach: #FFFFFF; --sky: #FFFFFF; --sand: #FFFFFF; --mint: #FFFFFF;
+  --ok: #111111; --warn: #111111; --warn-bg: #FFFFFF;
   --glass: rgba(255, 255, 255, .86);
   --ring: rgba(17, 17, 17, .3);
   --r-xs: 0; --r-s: 0; --r-m: 0; --r-l: 0; --r-xl: 0; --r-card: 0; --r-pill: 0;
@@ -96,13 +96,13 @@ section { padding: var(--s12) 0; }
 /* Pourquoi nous */
 .why { display: grid; gap: var(--s4); }
 @media (min-width: 760px) { .why { grid-template-columns: repeat(3, 1fr); } }
-.why div { background: var(--sb); border-radius: var(--r-xl); padding: var(--s6); }
+.why div { background: var(--sb); border: 1px solid var(--bd); border-radius: var(--r-xl); padding: var(--s6); }
 .why h3 { margin: 0 0 var(--s2); font-size: 1.125rem; font-weight: 600; letter-spacing: -.01em; }
 .why p { margin: 0; color: var(--mu); font-size: .9375rem; }
 .why .n { font-family: var(--mono); font-size: .8125rem; color: var(--accent-text); display: block; margin-bottom: var(--s3); }
 
 /* Avis (contenu fictif signalé) */
-.demo-note { font-size: .8125rem; color: var(--warn); background: var(--warn-bg); border-radius: var(--r-m); padding: 8px 12px; display: inline-block; margin: 0 0 var(--s5); }
+.demo-note { font-size: .8125rem; color: var(--warn); background: var(--warn-bg); border: 1px solid var(--bd); border-radius: var(--r-m); padding: 8px 12px; display: inline-block; margin: 0 0 var(--s5); }
 .reviews { display: grid; gap: var(--s4); }
 @media (min-width: 760px) { .reviews { grid-template-columns: repeat(3, 1fr); } }
 .review { background: var(--cd); border: 1px solid var(--bd); border-radius: var(--r-xl); padding: var(--s5); margin: 0; }
@@ -158,7 +158,7 @@ legend { font-size: .875rem; font-weight: 550; margin-bottom: var(--s3); }
 .info summary::after { content: "+"; font-size: 1.25rem; color: var(--mu); transition: transform var(--sp-soft-d) var(--sp-soft); }
 .info details[open] summary::after { transform: rotate(45deg); }
 .info details p { margin: 0 0 var(--s4); color: var(--mu); font-size: .9375rem; }
-.ship { display: flex; gap: var(--s3); align-items: start; background: var(--mint); border-radius: var(--r-l); padding: var(--s4); font-size: .9375rem; margin-bottom: var(--s6); }
+.ship { display: flex; gap: var(--s3); align-items: start; background: var(--mint); border: 1px solid var(--bd); border-radius: var(--r-l); padding: var(--s4); font-size: .9375rem; margin-bottom: var(--s6); }
 .ship svg { width: 20px; height: 20px; color: var(--ok); flex: none; margin-top: 2px; }
 
 /* Barre d'achat collante sur mobile */
